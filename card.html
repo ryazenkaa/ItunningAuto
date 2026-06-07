@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лифт кузова 30 мм</title>
+
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+
+<section class="product-page">
+
+    <div class="container">
+
+        <div class="breadcrumbs">
+            Главная / Каталог / Лифт кузова
+        </div>
+
+        <div class="header-cart">
+            <a href="cart.html" class="cart-link">
+                🛒 Корзина
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="gallery">
+
+                <div class="main-image">
+                    <img src="./images/Group 52.png" alt="">
+                </div>
+
+                <div class="thumbs">
+                    <img src="./images/452113 2.png" class="active">
+                    <img src="./images/Gaika R.png">
+                    <img src="./images/Group 54.png">
+                    <img src="./images/profile 1.png">
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <h1>
+                    ЛИФТ-КУЗОВА 30 ММ<br>
+                    TOYOTA LAND CRUISER 80/105
+                </h1>
+
+                <div class="rating">
+                    ★★★★★
+                    <span>12 отзывов</span>
+                </div>
+
+                <div class="sku">
+                    Артикул: CRUISER-30
+                </div>
+
+                <div class="price">
+                    7 500 ₽
+                </div>
+
+                <div class="stock">
+                    В наличии
+                </div>
+
+                <p class="short-description">
+                    Комплект проставок для лифта кузова на 30 мм.
+                    Изготовлены из высокопрочного капролона.
+                </p>
+
+                <div class="options">
+
+                    <label>Диаметр лифта</label>
+
+                    <div class="sizes">
+                        <button class="active">30 мм</button>
+                        <button>40 мм</button>
+                        <button>50 мм</button>
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <label>Материал</label>
+
+                    <div class="sizes">
+                        <button class="active">Капролон</button>
+                        
+                    </div>
+
+                </div>
+
+                <div class="buy-block">
+
+                    <div class="qty">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                    <button class="cart-btn add-to-cart">
+                        В КОРЗИНУ
+                    </button>
+
+                </div>
+
+                <div class="advantages">
+
+                    <div>Гарантия 1 год</div>
+                    <div>Быстрая доставка</div>
+                    <div>Безопасная оплата</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="info-grid">
+
+            <div class="characteristics">
+
+                <h2>Характеристики</h2>
+
+                <table>
+
+                    <tr>
+                        <td>Материал</td>
+                        <td>Капролон</td>
+                    </tr>
+
+                    <tr>
+                        <td>Диаметр лифта</td>
+                        <td>30 мм</td>
+                    </tr>
+
+                    <tr>
+                        <td>Совместимость</td>
+                        <td>Land Cruiser 80/105</td>
+                    </tr>
+
+                    <tr>
+                        <td>Комплект</td>
+                        <td>10 проставок</td>
+                        <td>10 болтов</td>
+                        <td>10 гаек</td>
+                        <td>10 шайб</td>
+                    </tr>
+
+                    <tr>
+                        <td>Артикул</td>
+                        <td>CRUISER-30</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="description">
+
+                <h2>Описание</h2>
+
+                <p>
+                    Комплект предназначен для увеличения клиренса
+                    автомобиля на 30 мм.
+                </p>
+
+                <p>
+                    Устанавливается без сварки и сложных доработок.
+                    В комплекте присутствует весь необходимый крепеж.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const cartButton =
+document.querySelector('.add-to-cart');
+
+const cartCount =
+document.getElementById('cartCount');
+
+function updateCartCounter(){
+
+    const cart =
+    JSON.parse(localStorage.getItem('cart')) || [];
+
+    cartCount.textContent = cart.length;
+}
+
+updateCartCounter();
+
+cartButton.addEventListener('click', () => {
+
+    const cart =
+    JSON.parse(localStorage.getItem('cart')) || [];
+
+    const product = {
+
+        id: 'CRUISER-30',
+
+        title:
+        'Лифт кузова 30 мм Toyota Land Cruiser',
+
+        price: 7500,
+
+        image:
+        './images/Group 52.png',
+
+        quantity: 1
+
+    };
+
+    const existingProduct =
+    cart.find(item => item.id === product.id);
+
+    if(existingProduct){
+
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push(product);
+
+    }
+
+    localStorage.setItem(
+        'cart',
+        JSON.stringify(cart)
+    );
+
+    updateCartCounter();
+
+    cartButton.textContent =
+    '✓ ДОБАВЛЕНО';
+
+    setTimeout(() => {
+
+        cartButton.textContent =
+        'В КОРЗИНУ';
+
+    },1500);
+
+});
+
+</script>
+
+</body>
+</html>

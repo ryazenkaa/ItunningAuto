@@ -1,0 +1,285 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+}
+
+.container{
+    width:1400px;
+    max-width:95%;
+    margin:auto;
+}
+
+.header{
+    border-bottom:1px solid #1f1f1f;
+    background:#090909;
+}
+
+.header-inner{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:900;
+    text-decoration:none;
+    color:#ff6a00;
+}
+
+.logo span{
+    color:#fff;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+}
+
+.cart-page{
+    padding:60px 0;
+}
+
+.breadcrumbs{
+    color:#777;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:64px;
+    margin-bottom:40px;
+}
+
+.cart-layout{
+    display:grid;
+    grid-template-columns:1fr 350px;
+    gap:30px;
+}
+
+.cart-items{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.cart-item{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:150px 1fr auto auto;
+    gap:25px;
+    align-items:center;
+}
+
+.cart-item img{
+    width:150px;
+    height:120px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.cart-info h3{
+    margin-bottom:10px;
+}
+
+.cart-info p{
+    color:#888;
+}
+
+.quantity{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.quantity button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:8px;
+    background:#111;
+    color:white;
+    cursor:pointer;
+}
+
+.cart-price{
+    color:#ff6a00;
+    font-size:24px;
+    font-weight:700;
+}
+
+.remove-btn{
+    border:none;
+    background:none;
+    color:#ff6a00;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.order-summary{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:30px;
+    height:fit-content;
+    position:sticky;
+    top:20px;
+}
+
+.order-summary h2{
+    margin-bottom:25px;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.checkout-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    background:#ff6a00;
+    color:white;
+    font-weight:700;
+    margin-top:25px;
+    cursor:pointer;
+}
+
+.clear-btn{
+    width:100%;
+    height:55px;
+    margin-top:10px;
+    border:1px solid #333;
+    background:#111;
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.empty-cart{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:60px;
+    text-align:center;
+}
+
+.empty-cart p{
+    color:#888;
+    margin-top:10px;
+}
+
+@media(max-width:992px){
+
+    .cart-layout{
+        grid-template-columns:1fr;
+    }
+
+    .cart-item{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(8px);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    width:550px;
+    max-width:95%;
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:35px;
+    position:relative;
+}
+
+.modal-content h2{
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+.close-modal{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:40px;
+    height:40px;
+    border:none;
+    background:none;
+    color:#ff6a00;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#bbb;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #333;
+    border-radius:12px;
+    background:#111;
+    color:#fff;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#ff6a00;
+}
+
+.submit-order{
+    width:100%;
+    height:55px;
+    border:none;
+    background:#ff6a00;
+    color:#fff;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+}
